@@ -152,9 +152,9 @@ for epoch in range(hp.epochs):
         prob = model(sample_speech,sample_text)
         loss = loss_function(prob, sample_label.view(-1))
 
-        loss += hp.alpha * get_cmd_loss(diff_loss, speench_info, text_info)
+        loss += hp.alpha * get_cmd_loss(diff_loss, sample_speech, sample_text)
 
-        loss += hp.beta * get_diff_loss(diff_loss, speench_info, text_info)
+        loss += hp.beta * get_diff_loss(diff_loss, sample_speech, sample_text)
 
         losses.append(loss.cpu().item())
         y_trues += sample_label.cpu().view(-1).numpy().tolist()

@@ -17,6 +17,9 @@ class HyperParams(object):
     speech_h = 300
     speech_w = 200
     
+    alpha = 1
+    beta = 1
+     
     batch_size = 32
     vaild_batch_size = 16
     epochs = 100000
