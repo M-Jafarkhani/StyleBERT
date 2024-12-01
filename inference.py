@@ -131,6 +131,7 @@ class BertMultiModel(nn.Module):
         input_ids, attention_mask = sentences['input_ids'],sentences['attention_mask']
         text_embedding, _  = self.bert_model(input_ids,
                                     attention_mask = attention_mask,
+                                    return_dict=False
                                     )
         text_enc = self.text_batchnorm(text_embedding)
         text_enc = self.dropout(text_enc)

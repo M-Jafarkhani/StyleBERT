@@ -114,9 +114,9 @@ def evaluate(model,data_loader,best_acc6,history_acc6):
     return best_acc6,history_acc6
 
 # load datasets
-with open('./data/train_sample.pkl', 'rb') as f:     
+with open('/content/StyleBERT/data/train_sample.pkl', 'rb') as f:     
     train_data = pickle.load(f)
-with open('./data/test_sample.pkl', 'rb') as f: 
+with open('/content/StyleBERT/data/test_sample.pkl', 'rb') as f: 
     test_data = pickle.load(f)
 
 # create dataset & model 

@@ -65,6 +65,7 @@ class BertTextModel(nn.Module):
         input_ids, attention_mask = sentences['input_ids'],sentences['attention_mask']
         text_embedding, _ = self.bert_model(input_ids,
                                     attention_mask = attention_mask,
+                                    return_dict=False
                                     )
 
         text_enc = self.batchnorm(text_embedding)
@@ -151,6 +152,7 @@ class BertMultiNoAlignmentModel(nn.Module):
         input_ids, attention_mask = sentences['input_ids'],sentences['attention_mask']
         text_embedding, _  = self.bert_model(input_ids,
                                     attention_mask = attention_mask,
+                                    return_dict=False
                                     )
         text_enc = self.text_batchnorm(text_embedding)
         text_enc = self.dropout(text_enc)
@@ -296,6 +298,7 @@ class BertMultiPoolModel(nn.Module):
         input_ids, attention_mask = sentences['input_ids'],sentences['attention_mask']
         text_embedding, _  = self.bert_model(input_ids,
                                     attention_mask = attention_mask,
+                                    return_dict=False
                                     )
         text_enc = self.text_batchnorm(text_embedding)
         text_enc = self.dropout(text_enc)
@@ -437,6 +440,7 @@ class BertMultiNoCompositionModel(nn.Module):
         input_ids, attention_mask = sentences['input_ids'],sentences['attention_mask']
         text_embedding, _  = self.bert_model(input_ids,
                                     attention_mask = attention_mask,
+                                    return_dict=False
                                     )
         text_enc = self.text_batchnorm(text_embedding)
         text_enc = self.dropout(text_enc)
@@ -558,6 +562,7 @@ class BertMultiAligenmentBilstmModel(nn.Module):
         input_ids, attention_mask = sentences['input_ids'],sentences['attention_mask']
         text_embedding, _  = self.bert_model(input_ids,
                                     attention_mask = attention_mask,
+                                    return_dict=False
                                     )
         text_enc = self.text_batchnorm(text_embedding)
         text_enc = self.dropout(text_enc)
@@ -691,6 +696,7 @@ class BertMultiSpeechEncodingBilstmModel(nn.Module):
         input_ids, attention_mask = sentences['input_ids'],sentences['attention_mask']
         text_embedding, _  = self.bert_model(input_ids,
                                     attention_mask = attention_mask,
+                                    return_dict=False
                                     )
         text_enc = self.text_batchnorm(text_embedding)
         text_enc = self.dropout(text_enc)
@@ -832,6 +838,7 @@ class BertMultiSpeechBaseAligenmentModel(nn.Module):
         input_ids, attention_mask = sentences['input_ids'],sentences['attention_mask']
         text_embedding, _  = self.bert_model(input_ids,
                                     attention_mask = attention_mask,
+                                    return_dict=False
                                     )
         text_enc = self.text_batchnorm(text_embedding)
         text_enc = self.dropout(text_enc)
@@ -960,6 +967,7 @@ class BertMultiTextBaseAligenmentModel(nn.Module):
         input_ids, attention_mask = sentences['input_ids'],sentences['attention_mask']
         text_embedding, _  = self.bert_model(input_ids,
                                     attention_mask = attention_mask,
+                                    return_dict=False
                                     )
         text_enc = self.text_batchnorm(text_embedding)
         text_enc = self.dropout(text_enc)
@@ -1089,6 +1097,7 @@ class BertMultiNoDiffProdModel(nn.Module):
         input_ids, attention_mask = sentences['input_ids'],sentences['attention_mask']
         text_embedding, _  = self.bert_model(input_ids,
                                     attention_mask = attention_mask,
+                                    return_dict=False
                                     )
         text_enc = self.text_batchnorm(text_embedding)
         text_enc = self.dropout(text_enc)
@@ -1260,6 +1269,7 @@ class BertMultiModel(nn.Module):
         input_ids, attention_mask = sentences['input_ids'],sentences['attention_mask']
         text_embedding, _  = self.bert_model(input_ids,
                                     attention_mask = attention_mask,
+                                    return_dict=False
                                     )
         text_enc = self.text_batchnorm(text_embedding)
         text_enc = self.dropout(text_enc)
